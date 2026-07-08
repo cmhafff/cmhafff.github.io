@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analyst Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Plus Jakarta Sans Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +41,6 @@
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-[#FFF9FA]/80 backdrop-blur-md border-b border-subtleBorder/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -51,7 +48,6 @@
                     <span class="w-3 h-3 rounded-full bg-primaryPink inline-block"></span>
                     <span>Analyst<span class="text-primaryPink">.</span>Portfolio</span>
                 </div>
-                <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#home" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Home</a>
                     <a href="#about" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">About</a>
@@ -64,7 +60,6 @@
                         View My Projects
                     </a>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button type="button" onclick="toggleMobileMenu()" class="text-darkText hover:text-primaryPink focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +69,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Nav Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-softBg border-b border-subtleBorder px-4 pt-2 pb-4 space-y-2 transition-all">
             <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Home</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">About</a>
@@ -87,104 +81,48 @@
         </div>
     </nav>
 
-    <!-- MAIN CONTAINER -->
     <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-24">
 
-        <!-- 1. HERO SECTION -->
         <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center data-grid-bg py-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-                <!-- Left Content -->
-                <div class="space-y-6">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-lightBlush text-darkText border border-subtleBorder">
-                        Hello, I’m an Analyst
-                    </span>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-darkText tracking-tight leading-[1.1]">
-                        Turning complex data into <span class="underline decoration-primaryPink decoration-wavy decoration-1 underline-offset-4">clear, actionable insights.</span>
-                    </h1>
-                    <p class="text-base sm:text-lg text-secondaryText max-w-xl leading-relaxed">
-                        I blend diagnostic analysis, predictive modeling, and strategic visualization to translate raw variables into clear narratives that answer critical operational challenges.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#projects" class="px-6 py-3 bg-primaryPink text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-[#df99a9] hover:shadow transition-all duration-200">
-                            View My Projects
-                        </a>
-                        <a href="#contact" class="px-6 py-3 bg-white border border-subtleBorder text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-lightBlush transition-all duration-200">
-                            Download Resume
-                        </a>
-                    </div>
-                    <!-- Social Links -->
-                    <div class="flex items-center space-x-4 pt-4 text-secondaryText">
-                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
-                            <span>LinkedIn</span> ↗
-                        </a>
-                        <span class="text-subtleBorder">•</span>
-                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
-                            <span>GitHub</span> ↗
-                        </a>
-                        <span class="text-subtleBorder">•</span>
-                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
-                            <span>Email</span> ↗
-                        </a>
-                    </div>
+            <div class="max-w-4xl space-y-6">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-lightBlush text-darkText border border-subtleBorder">
+                    Hello, I’m an Analyst
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-darkText tracking-tight leading-[1.1]">
+                    Turning complex data into <span class="underline decoration-primaryPink decoration-wavy decoration-1 underline-offset-4">clear, actionable insights.</span>
+                </h1>
+                <p class="text-base sm:text-lg text-secondaryText max-w-2xl leading-relaxed">
+                    I blend diagnostic analysis, predictive modeling, and strategic visualization to translate raw variables into clear narratives that answer critical operational challenges.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#projects" class="px-6 py-3 bg-primaryPink text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-[#df99a9] hover:shadow transition-all duration-200">
+                        View My Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-white border border-subtleBorder text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-lightBlush transition-all duration-200">
+                        Download Resume
+                    </a>
                 </div>
-                <!-- Right Visual (Abstract Dashboard) -->
-                <div class="relative bg-white border border-subtleBorder rounded-2xl p-6 shadow-sm aspect-[4/3] flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow">
-                    <div class="flex items-center justify-between border-b border-subtleBorder/40 pb-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink/40"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink/70"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink"></span>
-                        </div>
-                        <span class="text-xs font-mono text-secondaryText">operational_efficiency.py</span>
-                    </div>
-                    
-                    <div class="grid grid-cols-3 gap-4 my-auto">
-                        <!-- KPI 1 -->
-                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
-                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Optimization Rate</p>
-                            <p class="text-xl font-bold text-darkText mt-1">94.2%</p>
-                            <span class="text-[10px] text-emerald-600 font-medium">↑ 4.1% MoM</span>
-                        </div>
-                        <!-- KPI 2 -->
-                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
-                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Data Latency</p>
-                            <p class="text-xl font-bold text-darkText mt-1">&lt; 12ms</p>
-                            <span class="text-[10px] text-secondaryText font-medium">Stable</span>
-                        </div>
-                        <!-- KPI 3 -->
-                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
-                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Active Models</p>
-                            <p class="text-xl font-bold text-darkText mt-1">18</p>
-                            <span class="text-[10px] text-primaryPink font-medium">MILP Engine</span>
-                        </div>
-                    </div>
-
-                    <!-- Abstract Mini Graph -->
-                    <div class="w-full h-24 flex items-end gap-2 border-b border-l border-subtleBorder/80 p-1">
-                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 40%"></div>
-                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 55%"></div>
-                        <div class="w-full bg-primaryPink/40 border border-primaryPink/60 rounded-t" style="height: 45%"></div>
-                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 75%"></div>
-                        <div class="w-full bg-primaryPink border border-primaryPink rounded-t" style="height: 90%"></div>
-                    </div>
-                    <div class="flex justify-between text-[9px] text-secondaryText font-mono pt-2">
-                        <span>Q1_25</span>
-                        <span>Q2_25</span>
-                        <span>Q3_25</span>
-                        <span>Q4_25</span>
-                        <span>Q1_26</span>
-                    </div>
+                <div class="flex items-center space-x-4 pt-4 text-secondaryText">
+                    <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                        <span>LinkedIn</span> ↗
+                    </a>
+                    <span class="text-subtleBorder">•</span>
+                    <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                        <span>GitHub</span> ↗
+                    </a>
+                    <span class="text-subtleBorder">•</span>
+                    <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                        <span>Email</span> ↗
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- 2. ABOUT ME SECTION -->
         <section id="about" class="scroll-mt-20">
             <div class="border-b border-subtleBorder pb-4 mb-8">
                 <h2 class="text-2xl font-bold tracking-tight">01. About Me</h2>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Text Profile Column -->
                 <div class="lg:col-span-2 space-y-4 text-secondaryText leading-relaxed">
                     <p>
                         I am an analytical problem-solver specialized in translating multidimensional data matrices into intuitive business strategic paths. Backed by rigorous foundations in mathematical modeling and business intelligence frameworks, I look at datasets as interconnected systems waiting to be optimized.
@@ -204,7 +142,6 @@
                     </div>
                 </div>
                 
-                <!-- Skills Columns Grid -->
                 <div class="space-y-4">
                     <h3 class="text-sm font-bold uppercase tracking-wider text-darkText">Technical Arsenal</h3>
                     <div class="space-y-3">
@@ -244,13 +181,11 @@
             </div>
         </section>
 
-        <!-- 3. EDUCATION SECTION -->
         <section id="education" class="scroll-mt-20">
             <div class="border-b border-subtleBorder pb-4 mb-8">
                 <h2 class="text-2xl font-bold tracking-tight">02. Academic Foundations</h2>
             </div>
             <div class="space-y-6">
-                <!-- Academic Card -->
                 <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-primaryPink transition-colors relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-1 h-full bg-primaryPink group-hover:h-full transition-all"></div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -269,7 +204,6 @@
                     </div>
                 </div>
 
-                <!-- Academic Card 2 -->
                 <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-primaryPink transition-colors relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-1 h-full bg-primaryPink/60 group-hover:h-full transition-all"></div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -290,16 +224,13 @@
             </div>
         </section>
 
-        <!-- 4. EXPERIENCE SECTION -->
         <section id="experience" class="scroll-mt-20">
             <div class="border-b border-subtleBorder pb-4 mb-8">
                 <h2 class="text-2xl font-bold tracking-tight">03. Professional Timeline</h2>
             </div>
             
             <div class="relative border-l-2 border-subtleBorder pl-6 ml-4 space-y-12">
-                <!-- Timeline Item 1 -->
                 <div class="relative group">
-                    <!-- Dot anchor -->
                     <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-primaryPink group-hover:bg-primaryPink transition-colors"></div>
                     
                     <div class="bg-white border border-subtleBorder p-6 rounded-xl shadow-sm hover:shadow transition-shadow">
@@ -323,9 +254,7 @@
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
                 <div class="relative group">
-                    <!-- Dot anchor -->
                     <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-subtleBorder group-hover:border-primaryPink group-hover:bg-primaryPink transition-colors"></div>
                     
                     <div class="bg-white border border-subtleBorder p-6 rounded-xl shadow-sm hover:shadow transition-shadow">
@@ -351,329 +280,84 @@
             </div>
         </section>
 
-        <!-- 5. REDESIGNED HIGH-FIDELITY CASE STUDY SECTION -->
-        <section id="projects" class="scroll-mt-20 space-y-16">
+        <section id="projects" class="scroll-mt-20 space-y-8">
             <div class="border-b border-subtleBorder pb-4">
                 <h2 class="text-2xl font-bold tracking-tight">04. Analytical Showcases</h2>
             </div>
-
-            <!-- MASTER'S THESIS PREMIUM LAYOUT STRUCTURE -->
-            <div class="w-full space-y-20 bg-[#FFF9FA]">
-                
-                <!-- 1. Project Header Subcomponent -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border-b border-[#F1D7DE] pb-16">
-                    <!-- Left Column Info Frame -->
-                    <div class="lg:col-span-7 space-y-6">
-                        <div class="space-y-2">
-                            <span class="text-xs font-mono uppercase tracking-wider text-[#6F6872] bg-[#FCEEF2] px-3 py-1 rounded-full border border-[#F1D7DE]">
-                                Master’s Thesis · Operations Research · Beauty Industry
-                            </span>
-                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#25232A] tracking-tight leading-tight">
-                                Inclusive Shade Portfolio Optimization
-                            </h1>
+            <p class="text-sm text-secondaryText max-w-xl">
+                Click any case study profile below to dynamically render the complete programmatic schema, business discovery rules, and validation logic models within the workspace view.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-target-grid">
+                <div onclick="renderCmsProject('cosmetics-inclusivity')" class="cursor-pointer bg-white border border-subtleBorder rounded-xl overflow-hidden shadow-sm hover:border-primaryPink transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="h-44 bg-lightBlush/50 flex items-center justify-center p-6 border-b border-subtleBorder/60 relative">
+                        <div class="w-full h-full border border-dashed border-primaryPink/40 rounded-lg flex flex-col justify-center items-center text-center p-2">
+                            <span class="text-xs font-mono text-darkText bg-white px-2 py-0.5 rounded shadow-sm">Matrix Density Distribution Layout</span>
+                            <div class="w-2/3 bg-primaryPink/20 h-2 rounded-full mt-3 overflow-hidden">
+                                <div class="bg-primaryPink h-full w-[85%]"></div>
+                            </div>
                         </div>
-                        <p class="text-base sm:text-lg text-[#6F6872] leading-relaxed max-w-2xl">
-                            Using statistical simulation and mathematical optimization to help cosmetics brands build more inclusive product portfolios within a limited R&D budget.
-                        </p>
-                        <!-- Compact Skill Tokens -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">Operations Research</span>
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">Statistical Simulation</span>
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">MICQP</span>
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">Gini Coefficient</span>
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">Portfolio Optimization</span>
-                            <span class="px-3 py-1 bg-white border border-[#F1D7DE] text-xs font-medium text-[#25232A] rounded-md shadow-sm">Business Strategy</span>
-                        </div>
-                        <!-- CTA Elements -->
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <button class="px-6 py-3 bg-[#E8A8B8] text-[#25232A] font-semibold text-sm rounded-xl shadow-sm hover:bg-[#df99a9] transition-all duration-200">
-                                View Full Case Study
-                            </button>
-                            <button class="px-6 py-3 bg-white border border-[#F1D7DE] text-[#25232A] font-semibold text-sm rounded-xl shadow-sm hover:bg-[#FCEEF2] transition-all duration-200">
-                                View Methodology
-                            </button>
-                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono bg-white border border-subtleBorder px-2 py-0.5 rounded text-darkText">Featured Thesis</span>
                     </div>
-
-                    <!-- Right Column - Visual Chart & Palette Matrix Block -->
-                    <div class="lg:col-span-5 bg-white border border-[#F1D7DE] rounded-2xl p-6 shadow-sm relative overflow-hidden aspect-square flex flex-col justify-between">
-                        <div class="flex items-center justify-between border-b border-[#F1D7DE]/60 pb-3">
-                            <span class="text-xs font-mono text-[#6F6872]">optimization_matrix.out</span>
-                            <div class="flex space-x-1.5">
-                                <span class="w-2 h-2 rounded-full bg-[#E8A8B8]"></span>
-                                <span class="w-2 h-2 rounded-full bg-[#F1D7DE]"></span>
-                            </div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-secondaryText">
+                            <span>Assortment Optimization</span>
+                            <span>June 2026</span>
                         </div>
-                        <!-- Color Array Optimization Grid Patterns -->
-                        <div class="grid grid-cols-5 gap-3 my-auto">
-                            <div class="aspect-square rounded-full bg-[#FCEEF2] border border-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A] shadow-inner">0.1</div>
-                            <div class="aspect-square rounded-full bg-[#F1D7DE] flex items-center justify-center text-[10px] font-mono text-[#6F6872]">0.3</div>
-                            <div class="aspect-square rounded-full bg-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A]">0.5</div>
-                            <div class="aspect-square rounded-full bg-[#6F6872]/20 flex items-center justify-center text-[10px] font-mono text-[#6F6872]">0.7</div>
-                            <div class="aspect-square rounded-full bg-[#25232A]/10 flex items-center justify-center text-[10px] font-mono text-[#6F6872]">0.9</div>
-                            
-                            <div class="aspect-square rounded-full bg-[#6F6872]/10 border border-dashed border-[#6F6872]/40 flex items-center justify-center text-[9px] text-[#6F6872]">skip</div>
-                            <div class="aspect-square rounded-full bg-[#FCEEF2] border-2 border-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A] relative">
-                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full"></span>0.4
-                            </div>
-                            <div class="aspect-square rounded-full bg-[#F1D7DE] flex items-center justify-center text-[10px] font-mono text-[#6F6872]">0.6</div>
-                            <div class="aspect-square rounded-full bg-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A]">0.8</div>
-                            <div class="aspect-square rounded-full bg-[#25232A]/20 flex items-center justify-center text-[10px] font-mono text-[#25232A]">1.0</div>
-                            
-                            <div class="aspect-square rounded-full bg-[#FCEEF2] border border-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A]">0.2</div>
-                            <div class="aspect-square rounded-full bg-[#F1D7DE] flex items-center justify-center text-[10px] font-mono text-[#6F6872]">0.5</div>
-                            <div class="aspect-square rounded-full bg-[#6F6872]/10 border border-dashed border-[#6F6872]/40 flex items-center justify-center text-[9px] text-[#6F6872]">skip</div>
-                            <div class="aspect-square rounded-full bg-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A]">0.9</div>
-                            <div class="aspect-square rounded-full bg-[#FCEEF2] border-2 border-[#E8A8B8] flex items-center justify-center text-[10px] font-mono text-[#25232A] relative">
-                                <span class="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full"></span>1.2
-                            </div>
+                        <h3 class="text-base font-bold text-darkText group-hover:text-primaryPink transition-colors">Inclusive Shade Portfolio Optimization</h3>
+                        <p class="text-xs text-secondaryText line-clamp-3">As a forever lover of makeup, I often found myself scrolling through TikTok and seeing cosmetics brands being criticized for not being inclusive enough. That made me wonder how brands could respond to this issue in a more practical and data-driven way. For my master’s thesis, I developed an optimization framework to help cosmetics brands make more inclusive product decisions.</p>
+                        <div class="flex flex-wrap gap-1 pt-1">
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Operations Research</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">MICQP</span>
                         </div>
-                        <div class="border-t border-[#F1D7DE]/60 pt-3 flex justify-between items-center text-[11px] font-mono text-[#6F6872]">
-                            <span>Active Coverage Target: +20%</span>
-                            <span class="text-emerald-600 font-bold">✓ Constraints Met</span>
+                        <div class="pt-2 flex justify-end">
+                            <span class="text-xs font-semibold text-darkText inline-flex items-center gap-1 group-hover:text-primaryPink">View Case Study <span>→</span></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. Narrative Project Introduction Subcomponent -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-xs font-mono uppercase tracking-wider text-[#E8A8B8] font-bold">The Origin Story</h3>
-                        <div class="text-base text-[#6F6872] leading-relaxed space-y-4">
-                            <p>
-                                As a forever lover of makeup, I often found myself scrolling through TikTok and seeing cosmetics brands being criticized for not being inclusive enough. That made me wonder whether data and optimization could help brands approach inclusivity in a more practical way.
-                            </p>
-                            <p>
-                                For my master’s thesis, I developed an optimization framework to support more inclusive product decisions in the cosmetics industry. The project caught the attention of my program director, who praised its creative application of Operations Research to the beauty industry and agreed to serve as my second reader.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Highlighted Standalone Quote Module -->
-                    <div class="bg-[#FCEEF2] border border-[#F1D7DE] rounded-xl p-6 self-center shadow-sm">
-                        <p class="text-lg font-medium text-[#25232A] italic leading-snug">
-                            “Can Operations Research help beauty brands become more inclusive?”
-                        </p>
-                        <div class="w-8 h-1 bg-[#E8A8B8] mt-4 rounded"></div>
-                    </div>
-                </div>
-
-                <!-- 3. Business Problem Mapping Subcomponent -->
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <h2 class="text-xl sm:text-2xl font-bold text-[#25232A] tracking-tight">The Business Problem</h2>
-                        <p class="text-sm sm:text-base text-[#6F6872] max-w-3xl leading-relaxed">
-                            Cosmetics brands are increasingly expected to serve a wider range of skin tones, yet simply adding more products is not always financially or operationally realistic. The real challenge is not to offer as many shades as possible, but to identify which shades should be prioritized for each market. Brands must balance customer needs, local market characteristics, product coverage, development costs, and limited resources.
-                        </p>
-                    </div>
-                    
-                    <p class="text-base font-bold text-[#25232A] pt-2">
-                        How can a beauty brand improve inclusivity without continuously increasing its R&D budget?
-                    </p>
-
-                    <!-- Constraint Token Profiles Array -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-2">
-                        <div class="bg-white border border-[#F1D7DE] p-4 rounded-xl shadow-sm hover:border-[#E8A8B8] transition-colors">
-                            <span class="w-2 h-2 rounded-full bg-[#E8A8B8] block mb-2"></span>
-                            <p class="text-xs font-semibold text-[#25232A]">Limited R&D budget</p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-4 rounded-xl shadow-sm hover:border-[#E8A8B8] transition-colors">
-                            <span class="w-2 h-2 rounded-full bg-[#E8A8B8] block mb-2"></span>
-                            <p class="text-xs font-semibold text-[#25232A]">Different market characteristics</p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-4 rounded-xl shadow-sm hover:border-[#E8A8B8] transition-colors">
-                            <span class="w-2 h-2 rounded-full bg-[#E8A8B8] block mb-2"></span>
-                            <p class="text-xs font-semibold text-[#25232A]">High product development costs</p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-4 rounded-xl shadow-sm hover:border-[#E8A8B8] transition-colors">
-                            <span class="w-2 h-2 rounded-full bg-[#E8A8B8] block mb-2"></span>
-                            <p class="text-xs font-semibold text-[#25232A]">Uneven shade coverage</p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-4 rounded-xl shadow-sm hover:border-[#E8A8B8] transition-colors">
-                            <span class="w-2 h-2 rounded-full bg-[#E8A8B8] block mb-2"></span>
-                            <p class="text-xs font-semibold text-[#25232A]">Growing inclusivity expectations</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Analytical Approach Workflow Architecture -->
-                <div class="space-y-8">
-                    <div class="space-y-2">
-                        <h2 class="text-xl sm:text-2xl font-bold text-[#25232A] tracking-tight">From Limited Data to an Optimization Framework</h2>
-                    </div>
-
-                    <!-- Process Layout Cascade Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 relative group hover:shadow-sm transition-shadow">
-                            <div class="text-xs font-mono font-bold text-[#E8A8B8]">STEP 01</div>
-                            <h4 class="text-sm font-bold text-[#25232A]">Simulate the data</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                Since no suitable public dataset was available, I simulated the data through statistical analysis while incorporating the qualitative characteristics of each market.
-                            </p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 relative group hover:shadow-sm transition-shadow">
-                            <div class="text-xs font-mono font-bold text-[#E8A8B8]">STEP 02</div>
-                            <h4 class="text-sm font-bold text-[#25232A]">Measure inclusivity</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                I developed an inclusivity metric based on the Gini coefficient to evaluate how evenly different customer groups were covered by the product portfolio.
-                            </p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 relative group hover:shadow-sm transition-shadow">
-                            <div class="text-xs font-mono font-bold text-[#E8A8B8]">STEP 03</div>
-                            <h4 class="text-sm font-bold text-[#25232A]">Optimize the portfolio</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                I developed a Mixed-Integer Convex Quadratic Programming model to maximize market coverage and the inclusivity score while keeping total R&D costs within budget.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Flow Diagram Vector Simulator -->
-                    <div class="bg-[#FFF9FA] border border-[#F1D7DE]/60 p-4 rounded-xl">
-                        <div class="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-4 text-xs font-mono text-[#6F6872]">
-                            <div class="px-3 py-1.5 bg-white border border-[#F1D7DE] rounded shadow-sm">Market characteristics</div>
-                            <span class="rotate-90 lg:rotate-0 text-[#E8A8B8]">→</span>
-                            <div class="px-3 py-1.5 bg-white border border-[#F1D7DE] rounded shadow-sm">Statistical simulation</div>
-                            <span class="rotate-90 lg:rotate-0 text-[#E8A8B8]">→</span>
-                            <div class="px-3 py-1.5 bg-white border border-[#F1D7DE] rounded shadow-sm">Inclusivity measurement</div>
-                            <span class="rotate-90 lg:rotate-0 text-[#E8A8B8]">→</span>
-                            <div class="px-3 py-1.5 bg-white border border-[#F1D7DE] rounded shadow-sm">MICQP optimization</div>
-                            <span class="rotate-90 lg:rotate-0 text-[#E8A8B8]">→</span>
-                            <div class="px-3 py-1.5 bg-[#FCEEF2] border border-[#E8A8B8] font-bold text-[#25232A] rounded shadow-sm">Recommended shade portfolio</div>
-                        </div>
-                    </div>
-
-                    <!-- Accessibility Summary Matrix Layer -->
-                    <div class="bg-white border border-[#F1D7DE] rounded-xl p-6 max-w-2xl mx-auto space-y-4 shadow-sm">
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-[#25232A] font-bold border-b border-[#F1D7DE]/60 pb-2">
-                            Technical Engine Specifications
-                        </h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                            <div class="space-y-1.5">
-                                <p><strong class="text-[#25232A]">Objective:</strong> Maximize coverage and inclusivity</p>
-                                <p><strong class="text-[#25232A]">Decision Matrix:</strong> shades targeted for regional development</p>
-                                <p><strong class="text-[#25232A]">Operational Constraint:</strong> Fixed R&D baseline budget metrics</p>
-                            </div>
-                            <div class="space-y-1.5">
-                                <p><strong class="text-[#25232A]">Mathematical Method:</strong> Mixed-Integer Convex Quadratic Programming</p>
-                                <p><strong class="text-[#25232A]">Fairness Framework Metric:</strong> Gini-based skin tone inclusivity score</p>
+                <div onclick="renderCmsProject('bauxite-violation-model')" class="cursor-pointer bg-white border border-subtleBorder rounded-xl overflow-hidden shadow-sm hover:border-primaryPink transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="h-44 bg-softBg flex items-center justify-center p-6 border-b border-subtleBorder/60 relative">
+                        <div class="w-full h-full border border-dashed border-secondaryText/20 rounded-lg flex flex-col justify-center items-center text-center p-2">
+                            <span class="text-xs font-mono text-secondaryText bg-white px-2 py-0.5 rounded shadow-sm">Risk Assessment Matrix Map</span>
+                            <div class="flex gap-1 mt-4 w-1/2 justify-center">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- 5. Business Insight Metrics Comparisons -->
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <h2 class="text-xl sm:text-2xl font-bold text-[#25232A] tracking-tight">More Shades Do Not Always Mean More Inclusivity</h2>
-                        <p class="text-sm sm:text-base text-[#6F6872] max-w-3xl leading-relaxed">
-                            The analysis showed that offering more shades does not automatically lead to better inclusivity. What matters is selecting the right shades for each market based on local demand and product characteristics. A targeted product strategy can provide better customer coverage without requiring brands to continuously expand their portfolio.
-                        </p>
-                    </div>
-
-                    <!-- Structural Comparative Strategy Columns -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-3 relative overflow-hidden group">
-                            <div class="absolute top-0 left-0 h-1 w-full bg-[#6F6872]/40"></div>
-                            <h4 class="text-xs font-mono uppercase tracking-wider text-[#6F6872] font-bold">Before Optimization</h4>
-                            <ul class="text-xs sm:text-sm text-[#6F6872] space-y-2 list-disc list-inside marker:text-[#6F6872]">
-                                <li>Broad but inefficient shade allocation models</li>
-                                <li>Uneven market coverage distributions</li>
-                                <li>Capital spent on lower-impact product configurations</li>
-                            </ul>
+                    <div class="p-5 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-secondaryText">
+                            <span>Compliance Analytics</span>
+                            <span>Dec 2025</span>
                         </div>
-                        <div class="bg-white border-2 border-[#E8A8B8] p-5 rounded-xl space-y-3 relative overflow-hidden group shadow-sm">
-                            <div class="absolute top-0 left-0 h-1 w-full bg-[#E8A8B8]"></div>
-                            <h4 class="text-xs font-mono uppercase tracking-wider text-[#E8A8B8] font-bold">After Optimization</h4>
-                            <ul class="text-xs sm:text-sm text-[#25232A] space-y-2 list-disc list-inside marker:text-[#E8A8B8] font-medium">
-                                <li>Market-specific shade allocation maps</li>
-                                <li>Balanced consumer tone coverage matrices</li>
-                                <li>Maximized utilization efficiency of the existing R&D budget</li>
-                            </ul>
+                        <h3 class="text-base font-bold text-darkText group-hover:text-primaryPink transition-colors">Bauxite Extraction Audit &amp; Structural Analysis</h3>
+                        <p class="text-xs text-secondaryText line-clamp-2">Synthesized dense administrative audit frameworks into structured risk metrics profiles to prevent compliance deviations.</p>
+                        <div class="flex flex-wrap gap-1 pt-1">
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Text Mining</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Power BI Audit Path</span>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <span class="text-xs font-semibold text-darkText inline-flex items-center gap-1 group-hover:text-primaryPink">View Case Study <span>→</span></span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- 6. Central Key Result Stat Display Section -->
-                <div class="flex flex-col items-center justify-center py-8 border-y border-[#F1D7DE]/60">
-                    <div class="bg-white border border-[#E8A8B8] rounded-2xl p-6 sm:p-8 max-w-xl w-full text-center space-y-4 shadow-sm relative overflow-hidden group">
-                        <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-[#FCEEF2] rounded-full -z-0 group-hover:scale-110 transition-transform"></div>
-                        
-                        <div class="relative z-10 space-y-1">
-                            <div class="text-5xl sm:text-6xl font-bold text-[#25232A] tracking-tight transition-transform duration-500">
-                                +20%
-                            </div>
-                            <p class="text-sm font-bold text-[#25232A] uppercase tracking-wider">
-                                Improvement in market coverage
-                            </p>
-                            <p class="text-xs text-[#6F6872] max-w-md mx-auto pt-1">
-                                Achieved by reallocating the shade portfolio while maintaining the same R&D budget.
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 border-t border-[#F1D7DE]/60 pt-4 relative z-10 text-xs font-mono text-[#6F6872]">
-                            <div class="border-r border-[#F1D7DE]/60">
-                                <p class="font-bold text-[#25232A]">€0</p>
-                                <p class="text-[10px]">Additional Budget Required</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-[#25232A]">Optimized Selection</p>
-                                <p class="text-[10px]">Strategic Path</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Strategic Business Implications Subcomponent -->
-                <div class="space-y-6">
-                    <div class="space-y-1">
-                        <h2 class="text-xl sm:text-2xl font-bold text-[#25232A] tracking-tight">What This Means for Beauty Brands</h2>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 hover:border-[#E8A8B8] transition-colors">
-                            <h4 class="text-sm font-bold text-[#25232A]">Smarter product development</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                Prioritize shades with the greatest potential impact instead of expanding the portfolio indiscriminately.
-                            </p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 hover:border-[#E8A8B8] transition-colors">
-                            <h4 class="text-sm font-bold text-[#25232A]">Market-specific inclusivity</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                Adapt product decisions to the demographic and qualitative characteristics of each market.
-                            </p>
-                        </div>
-                        <div class="bg-white border border-[#F1D7DE] p-5 rounded-xl space-y-2 hover:border-[#E8A8B8] transition-colors">
-                            <h4 class="text-sm font-bold text-[#25232A]">Better budget allocation</h4>
-                            <p class="text-xs text-[#6F6872] leading-relaxed">
-                                Improve customer coverage and inclusivity without increasing the existing R&D budget.
-                            </p>
-                        </div>
-                    </div>
-
-                    <p class="text-sm sm:text-base text-center font-medium text-[#25232A] bg-[#FCEEF2]/60 border border-[#F1D7DE]/40 py-3 rounded-lg max-w-2xl mx-auto">
-                        “Inclusivity is not only about offering more. It is about making better product decisions for the customers a brand aims to serve.”
-                    </p>
-                </div>
-
-                <!-- 8. Academic Review Recognition Card -->
-                <div class="max-w-3xl mx-auto pt-4">
-                    <div class="bg-white border-l-4 border-[#E8A8B8] border-y border-r border-[#F1D7DE] p-5 rounded-r-xl shadow-sm space-y-1">
-                        <h4 class="text-xs font-mono uppercase tracking-wider text-[#E8A8B8] font-bold">Academic Recognition</h4>
-                        <p class="text-xs sm:text-sm text-[#6F6872] leading-relaxed">
-                            The project was recognized by my program director for its creative application of Operations Research to the beauty industry. Following his feedback, he agreed to join the thesis as my second reader.
-                        </p>
-                    </div>
-                </div>
-
+            <div id="cms-render-viewport" class="hidden mt-12 bg-white border border-[#F1D7DE] rounded-2xl p-4 sm:p-8 shadow-md relative transition-all duration-300">
+                <button onclick="closeCmsPanel()" class="absolute top-4 right-4 bg-softBg hover:bg-lightBlush border border-subtleBorder text-darkText px-3 py-1 rounded-lg text-xs font-mono transition-colors z-30">
+                    ✕ Close Case Study
+                </button>
+                <div id="cms-payload-area" class="w-full"></div>
             </div>
         </section>
 
-        <!-- 6. EXTRACURRICULAR ACTIVITIES SECTION -->
         <section id="extracurricular" class="scroll-mt-20">
             <div class="border-b border-subtleBorder pb-4 mb-8">
                 <h2 class="text-2xl font-bold tracking-tight">05. Engagement &amp; Leadership</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Activity Card 1 -->
                 <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-subtleBorder/80 transition-colors">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-mono text-primaryPink bg-lightBlush px-2 py-0.5 rounded font-bold uppercase">Hackathon Framework</span>
@@ -688,7 +372,6 @@
                     </div>
                 </div>
 
-                <!-- Activity Card 2 -->
                 <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-subtleBorder/80 transition-colors">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-mono text-secondaryText bg-softBg px-2 py-0.5 rounded font-bold uppercase">Academic Event Group</span>
@@ -705,11 +388,9 @@
             </div>
         </section>
 
-        <!-- 7. CONTACT SECTION -->
         <section id="contact" class="scroll-mt-20 data-grid-bg py-8">
             <div class="bg-white border border-subtleBorder rounded-2xl p-6 sm:p-10 shadow-sm max-w-4xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                    <!-- Text Frame -->
                     <div class="lg:col-span-2 space-y-4">
                         <h2 class="text-2xl font-bold tracking-tight text-darkText">Let's turn data into meaningful decisions.</h2>
                         <p class="text-sm text-secondaryText leading-relaxed">
@@ -726,7 +407,6 @@
                             </p>
                         </div>
                     </div>
-                    <!-- Interaction Form -->
                     <form onsubmit="handleFormSubmission(event)" class="lg:col-span-3 space-y-3">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
@@ -756,7 +436,6 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="border-t border-subtleBorder/60 mt-24 bg-white py-8 text-xs text-secondaryText">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
@@ -771,15 +450,181 @@
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC ENGINE -->
     <script>
-        // Navigation Menu Interactions Handler
+        // CMS Dynamic Content Injector
+        function renderCmsProject(slug) {
+            const viewport = document.getElementById('cms-render-viewport');
+            const target = document.getElementById('cms-payload-area');
+            
+            if (slug === 'cosmetics-inclusivity') {
+                target.innerHTML = `
+                    <div class="space-y-16 py-4 text-[#25232A]">
+                        
+                        <div class="border-b border-[#F1D7DE] pb-12 space-y-4 max-w-4xl">
+                            <span class="text-xs font-mono uppercase tracking-wider text-[#6F6872] bg-[#FCEEF2] px-3 py-1 rounded-full border border-[#F1D7DE]">
+                                Master’s Thesis · Operations Research · Beauty Industry
+                            </span>
+                            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#25232A]">
+                                Inclusive Shade Portfolio Optimization
+                            </h1>
+                            <p class="text-sm sm:text-base text-[#6F6872] leading-relaxed">
+                                Using statistical simulation and mathematical optimization to help cosmetics brands build more inclusive product portfolios within a limited R&D budget.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">Operations Research</span>
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">Statistical Simulation</span>
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">MICQP</span>
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">Gini Coefficient</span>
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">Portfolio Optimization</span>
+                                <span class="px-2.5 py-0.5 bg-softBg border border-[#F1D7DE] text-[11px] font-medium rounded">Business Strategy</span>
+                            </div>
+                            <div class="flex gap-3 pt-2">
+                                <button class="px-4 py-2 bg-[#E8A8B8] text-xs font-bold rounded-lg shadow-sm">View Full Case Study</button>
+                                <button class="px-4 py-2 bg-white border border-[#F1D7DE] text-xs font-bold rounded-lg shadow-sm">View Methodology</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                            <div class="lg:col-span-2 space-y-3">
+                                <h4 class="text-xs font-mono uppercase tracking-wider text-[#E8A8B8] font-bold">The Origin Story</h4>
+                                <div class="text-sm text-[#6F6872] leading-relaxed space-y-3">
+                                    <p>As a forever lover of makeup, I often found myself scrolling through TikTok and seeing cosmetics brands being criticized for not being inclusive enough. That made me wonder whether data and optimization could help brands approach inclusivity in a more practical way.</p>
+                                    <p>For my master’s thesis, I developed an optimization framework to support more inclusive product decisions in the cosmetics industry. The project caught the attention of my program director, who praised its creative application of Operations Research to the beauty industry and agreed to serve as my second reader.</p>
+                                </div>
+                            </div>
+                            <div class="bg-[#FCEEF2] border border-[#F1D7DE] rounded-xl p-5 self-center shadow-sm">
+                                <p class="text-base font-medium italic text-[#25232A]">“Can Operations Research help beauty brands become more inclusive?”</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-bold">The Business Problem</h3>
+                            <p class="text-sm text-[#6F6872] leading-relaxed max-w-3xl">
+                                Cosmetics brands are increasingly expected to serve a wider range of skin tones, yet simply adding more products is not always financially or operationally realistic. The real challenge is not to offer as many shades as possible, but to identify which shades should be prioritized for each market. Brands must balance customer needs, local market characteristics, product coverage, development costs, and limited resources.
+                            </p>
+                            <p class="text-sm font-bold text-[#25232A]">How can a beauty brand improve inclusivity without continuously increasing its R&D budget?</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 pt-2">
+                                ${['Limited R&D budget', 'Different market characteristics', 'High product development costs', 'Uneven shade coverage', 'Growing inclusivity expectations'].map(item => `
+                                    <div class="bg-white border border-[#F1D7DE] p-3 rounded-lg text-xs font-semibold shadow-sm">${item}</div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <h3 class="text-lg font-bold">From Limited Data to an Optimization Framework</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg space-y-1">
+                                    <span class="text-[10px] font-mono text-[#E8A8B8] font-bold">STEP 01</span>
+                                    <h5 class="text-xs font-bold">Simulate the data</h5>
+                                    <p class="text-xs text-[#6F6872]">Since no suitable public dataset was available, I simulated the data through statistical analysis while incorporating the qualitative characteristics of each market.</p>
+                                </div>
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg space-y-1">
+                                    <span class="text-[10px] font-mono text-[#E8A8B8] font-bold">STEP 02</span>
+                                    <h5 class="text-xs font-bold">Measure inclusivity</h5>
+                                    <p class="text-xs text-[#6F6872]">I developed an inclusivity metric based on the Gini coefficient to evaluate how evenly different customer groups were covered by the product portfolio.</p>
+                                </div>
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg space-y-1">
+                                    <span class="text-[10px] font-mono text-[#E8A8B8] font-bold">STEP 03</span>
+                                    <h5 class="text-xs font-bold">Optimize the portfolio</h5>
+                                    <p class="text-xs text-[#6F6872]">I developed a Mixed-Integer Convex Quadratic Programming model to maximize market coverage and the inclusivity score while keeping total R&D costs within budget.</p>
+                                </div>
+                            </div>
+                            <div class="bg-softBg border border-[#F1D7DE]/60 p-3 rounded-lg text-[11px] font-mono text-[#6F6872] flex flex-wrap items-center justify-center gap-2 text-center">
+                                <span>Market characteristics</span> ➔ <span>Statistical simulation</span> ➔ <span>Inclusivity measurement</span> ➔ <span>MICQP optimization</span> ➔ <span class="text-[#25232A] font-bold">Recommended shade portfolio</span>
+                            </div>
+                            <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg max-w-xl mx-auto text-xs grid grid-cols-1 sm:grid-cols-2 gap-2 shadow-sm">
+                                <p><strong>Objective:</strong> Maximize coverage and inclusivity</p>
+                                <p><strong>Decision:</strong> Which shades to develop for each market</p>
+                                <p><strong>Constraint:</strong> Fixed R&D budget</p>
+                                <p><strong>Method:</strong> Mixed-Integer Convex Quadratic Programming</p>
+                                <p class="sm:col-span-2"><strong>Fairness metric:</strong> Gini-based inclusivity score</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-bold">More Shades Do Not Always Mean More Inclusivity</h3>
+                            <p class="text-sm text-[#6F6872] leading-relaxed max-w-3xl">
+                                The analysis showed that offering more shades does not automatically lead to better inclusivity. What matters is selecting the right shades for each market based on local demand and product characteristics. A targeted product strategy can provide better customer coverage without requiring brands to continuously expand their portfolio.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg space-y-2">
+                                    <h6 class="text-xs font-mono font-bold text-[#6F6872]">Before Optimization</h6>
+                                    <p class="text-xs text-[#6F6872]">Broad but inefficient shade allocation • Uneven market coverage • Budget spent on lower-impact products</p>
+                                </div>
+                                <div class="bg-white border-2 border-[#E8A8B8] p-4 rounded-lg space-y-2">
+                                    <h6 class="text-xs font-mono font-bold text-[#E8A8B8]">After Optimization</h6>
+                                    <p class="text-xs text-[#25232A] font-medium">Market-specific shade selection • More balanced customer coverage • Better use of the existing R&D budget</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center py-4 border-y border-[#F1D7DE]/40">
+                            <div class="bg-white border border-[#E8A8B8] p-6 rounded-xl text-center max-w-md w-full space-y-2 shadow-sm">
+                                <div class="text-5xl font-bold text-[#25232A]">+20%</div>
+                                <div class="text-xs font-bold uppercase tracking-wider">Improvement in market coverage</div>
+                                <p class="text-[11px] text-[#6F6872]">Achieved by reallocating the shade portfolio while maintaining the same R&D budget.</p>
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-mono pt-2 border-t border-[#F1D7DE]/60">
+                                    <div><strong>Budget Required:</strong> €0</div>
+                                    <div><strong>Strategy:</strong> Optimized selection</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-bold">What This Means for Beauty Brands</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg text-xs space-y-1 shadow-sm">
+                                    <h5 class="font-bold">Smarter product development</h5>
+                                    <p class="text-[#6F6872]">Optimize the overall combination of shades to improve market coverage and inclusivity within the available budget..</p>
+                                </div>
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg text-xs space-y-1 shadow-sm">
+                                    <h5 class="font-bold">Market-specific inclusivity</h5>
+                                    <p class="text-[#6F6872]">Adapt product decisions to the demographic and qualitative characteristics of each market.</p>
+                                </div>
+                                <div class="bg-white border border-[#F1D7DE] p-4 rounded-lg text-xs space-y-1 shadow-sm">
+                                    <h5 class="font-bold">Better budget allocation</h5>
+                                    <p class="text-[#6F6872]">Improve customer coverage and inclusivity without increasing the existing R&D budget.</p>
+                                </div>
+                            </div>
+                            <p class="text-xs sm:text-sm text-center font-medium bg-[#FCEEF2]/60 p-2.5 rounded-lg border border-[#F1D7DE]/40 max-w-xl mx-auto">
+                                “Inclusivity is not only about offering more. It is about making better product decisions for the customers a brand aims to serve.”
+                            </p>
+                        </div>
+
+                        <div class="bg-white border-l-4 border-[#E8A8B8] border-y border-r border-[#F1D7DE] p-4 rounded-r-xl max-w-2xl mx-auto text-xs space-y-1">
+                            <h5 class="font-bold font-mono text-[#E8A8B8] uppercase tracking-wider text-[10px]">Academic Recognition</h5>
+                            <p class="text-[#6F6872]">The project was recognized by my program director for its creative application of Operations Research to the beauty industry. Following his feedback, he agreed to join the thesis as my second reader.</p>
+                        </div>
+
+                    </div>
+                `;
+            } else if (slug === 'bauxite-violation-model') {
+                target.innerHTML = `
+                    <div class="space-y-4 py-4">
+                        <span class="text-xs font-mono bg-softBg text-secondaryText px-2 py-0.5 rounded border border-subtleBorder">Compliance Analytics</span>
+                        <h3 class="text-xl font-bold text-darkText">Bauxite Extraction Audit &amp; Structural Analysis</h3>
+                        <p class="text-sm text-secondaryText">Parsing legal regional extraction metrics and environmental dataset records into direct preventative action parameters.</p>
+                        <div class="bg-softBg p-4 border border-subtleBorder rounded-lg text-xs text-secondaryText leading-relaxed space-y-2">
+                            <p><strong>Business Problem:</strong> Manual audit pipelines mask extraction deviations until regulatory panels issue retroactive execution fines.</p>
+                            <p><strong>Methodology:</strong> Python text token parsing cleanups tracking geographic metric coordinates loops variables arrays.</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            viewport.classList.remove('hidden');
+            viewport.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function closeCmsPanel() {
+            document.getElementById('cms-render-viewport').classList.add('hidden');
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Contact Submission Handler Simulation
         function handleFormSubmission(event) {
             event.preventDefault();
             alert('Analytical verification tracking transmission: Your sample form input simulation processed successfully.');
