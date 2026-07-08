@@ -1,70 +1,644 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Plus Jakarta Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primaryPink: '#E8A8B8',
+                        lightBlush: '#FCEEF2',
+                        softBg: '#FFF9FA',
+                        darkText: '#25232A',
+                        secondaryText: '#6F6872',
+                        subtleBorder: '#F1D7DE',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFF9FA;
+            color: #25232A;
+        }
+        .data-grid-bg {
+            background-image: radial-gradient(#F1D7DE 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
 </head>
-<body>
-  <header class="hero">
-    <nav>
-      <h2>MyPortfolio</h2>
-      <div>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+<body class="font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-[#FFF9FA]/80 backdrop-blur-md border-b border-subtleBorder/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-lg tracking-tight flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-primaryPink inline-block"></span>
+                    <span>Analyst<span class="text-primaryPink">.</span>Portfolio</span>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Home</a>
+                    <a href="#about" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">About</a>
+                    <a href="#education" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Education</a>
+                    <a href="#experience" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Experience</a>
+                    <a href="#projects" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Projects</a>
+                    <a href="#extracurricular" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Activities</a>
+                    <a href="#contact" class="text-secondaryText hover:text-darkText font-medium text-sm transition-colors">Contact</a>
+                    <a href="#projects" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-primaryPink rounded-full text-sm font-medium text-darkText bg-white hover:bg-lightBlush transition-all duration-200 shadow-sm">
+                        View My Projects
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" onclick="toggleMobileMenu()" class="text-darkText hover:text-primaryPink focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-softBg border-b border-subtleBorder px-4 pt-2 pb-4 space-y-2 transition-all">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">About</a>
+            <a href="#education" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Education</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Experience</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Projects</a>
+            <a href="#extracurricular" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Activities</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-secondaryText hover:text-darkText rounded-md">Contact</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-2 border border-primaryPink rounded-full text-sm font-medium text-darkText bg-white">View My Projects</a>
+        </div>
     </nav>
 
-    <div class="hero-content">
-      <h1>Hi, I'm Cam Ha Bui</h1>
-      <p>I build beautiful and useful websites.</p>
-      <a class="btn" href="#projects">View My Work</a>
-    </div>
-  </header>
+    <!-- MAIN CONTAINER -->
+    <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-24">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am learning web development and creating projects using HTML, CSS,
-      JavaScript, and modern web technologies.
-    </p>
-  </section>
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center data-grid-bg py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                <!-- Left Content -->
+                <div class="space-y-6 opacity-0 translate-y-4 animate-[fadeInUp_0.8s_ease-out_forward] style='animation-fill-mode: forwards;'">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-lightBlush text-darkText border border-subtleBorder">
+                        Hello, I’m an Analyst
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-darkText tracking-tight leading-[1.1]">
+                        Turning complex data into <span class="underline decoration-primaryPink decoration-wavy decoration-1 underline-offset-4">clear, actionable insights.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-secondaryText max-w-xl leading-relaxed">
+                        I blend diagnostic analysis, predictive modeling, and strategic visualization to translate raw variables into clear narratives that answer critical operational challenges.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#projects" class="px-6 py-3 bg-primaryPink text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-[#df99a9] hover:shadow transition-all duration-200">
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="px-6 py-3 bg-white border border-subtleBorder text-darkText font-medium text-sm rounded-xl shadow-sm hover:bg-lightBlush transition-all duration-200">
+                            Download Resume
+                        </a>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="flex items-center space-x-4 pt-4 text-secondaryText">
+                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                            <span>LinkedIn</span> ↗
+                        </a>
+                        <span class="text-subtleBorder">•</span>
+                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                            <span>GitHub</span> ↗
+                        </a>
+                        <span class="text-subtleBorder">•</span>
+                        <a href="#" class="hover:text-primaryPink transition-colors text-sm font-medium flex items-center gap-1">
+                            <span>Email</span> ↗
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Visual (Abstract Dashboard) -->
+                <div class="relative bg-white border border-subtleBorder rounded-2xl p-6 shadow-sm aspect-[4/3] flex flex-col justify-between overflow-hidden group hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-between border-b border-subtleBorder/40 pb-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink/40"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink/70"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-primaryPink"></span>
+                        </div>
+                        <span class="text-xs font-mono text-secondaryText">operational_efficiency.py</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 my-auto">
+                        <!-- KPI 1 -->
+                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
+                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Optimization Rate</p>
+                            <p class="text-xl font-bold text-darkText mt-1">94.2%</p>
+                            <span class="text-[10px] text-emerald-600 font-medium">↑ 4.1% MoM</span>
+                        </div>
+                        <!-- KPI 2 -->
+                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
+                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Data Latency</p>
+                            <p class="text-xl font-bold text-darkText mt-1">&lt; 12ms</p>
+                            <span class="text-[10px] text-secondaryText font-medium">Stable</span>
+                        </div>
+                        <!-- KPI 3 -->
+                        <div class="bg-softBg border border-subtleBorder p-3 rounded-xl">
+                            <p class="text-[10px] text-secondaryText uppercase tracking-wider font-semibold">Active Models</p>
+                            <p class="text-xl font-bold text-darkText mt-1">18</p>
+                            <span class="text-[10px] text-primaryPink font-medium">MILP Engine</span>
+                        </div>
+                    </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
+                    <!-- Abstract Mini Graph -->
+                    <div class="w-full h-24 flex items-end gap-2 border-b border-l border-subtleBorder/80 p-1">
+                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 40%"></div>
+                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 55%"></div>
+                        <div class="w-full bg-primaryPink/40 border border-primaryPink/60 rounded-t" style="height: 45%"></div>
+                        <div class="w-full bg-lightBlush border border-primaryPink/40 rounded-t" style="height: 75%"></div>
+                        <div class="w-full bg-primaryPink border border-primaryPink rounded-t" style="height: 90%"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] text-secondaryText font-mono pt-2">
+                        <span>Q1_25</span>
+                        <span>Q2_25</span>
+                        <span>Q3_25</span>
+                        <span>Q4_25</span>
+                        <span>Q1_26</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="project-grid">
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>A personal website built with HTML and CSS.</p>
-        <a href="#">View Project</a>
-      </div>
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="scroll-mt-20">
+            <div class="border-b border-subtleBorder pb-4 mb-8">
+                <h2 class="text-2xl font-bold tracking-tight">01. About Me</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Text Profile Column -->
+                <div class="lg:col-span-2 space-y-4 text-secondaryText leading-relaxed">
+                    <p>
+                        I am an analytical problem-solver specialized in translating multidimensional data matrices into intuitive business strategic paths. Backed by rigorous foundations in mathematical modeling and business intelligence frameworks, I look at datasets as interconnected systems waiting to be optimized.
+                    </p>
+                    <p>
+                        My core focus rests at the intersection of operational efficiency, supply metrics, and continuous process mapping. I enjoy attacking uncleaned databases, isolating key performance signals, and engineering structured pipelines that drive decision-making without organizational friction.
+                    </p>
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-darkText">
+                        <div class="p-4 bg-white border border-subtleBorder rounded-xl">
+                            <h4 class="font-bold text-sm text-primaryPink uppercase tracking-wider mb-1">Analytical Approach</h4>
+                            <p class="text-sm text-secondaryText">Structured diagnostic frameworks combined with continuous data validation processes.</p>
+                        </div>
+                        <div class="p-4 bg-white border border-subtleBorder rounded-xl">
+                            <h4 class="font-bold text-sm text-primaryPink uppercase tracking-wider mb-1">Professional Goal</h4>
+                            <p class="text-sm text-secondaryText">To deploy high-fidelity reproducible data environments that mitigate market risk parameters.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Columns Grid -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-darkText">Technical Arsenal</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <span class="text-xs font-semibold text-secondaryText block mb-1">Data Analysis</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Data Cleaning</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">EDA</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Statistics</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-secondaryText block mb-1">Visualization</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Power BI</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Tableau</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Data Visualization</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-secondaryText block mb-1">Programming</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">SQL</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Python</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Excel</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-secondaryText block mb-1">Business</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Business Analysis</span>
+                                <span class="px-2.5 py-1 bg-white border border-subtleBorder text-xs rounded-md font-medium">Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="card">
-        <h3>Landing Page</h3>
-        <p>A clean landing page for a small business or product.</p>
-        <a href="#">View Project</a>
-      </div>
+        <!-- 3. EDUCATION SECTION -->
+        <section id="education" class="scroll-mt-20">
+            <div class="border-b border-subtleBorder pb-4 mb-8">
+                <h2 class="text-2xl font-bold tracking-tight">02. Academic Foundations</h2>
+            </div>
+            <div class="space-y-6">
+                <!-- Academic Card -->
+                <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-primaryPink transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primaryPink group-hover:h-full transition-all"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-darkText">MSc in Econometrics and Operations Research</h3>
+                            <p class="text-sm font-medium text-secondaryText">Specialized Target Institution</p>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs font-mono bg-lightBlush px-2 py-1 rounded text-darkText border border-subtleBorder">Current Enrolment</span>
+                            <p class="text-xs text-secondaryText mt-1">Amsterdam, NL</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-subtleBorder/40 pt-3 space-y-2 text-sm text-secondaryText">
+                        <p><strong class="text-darkText">Key Focus Fields:</strong> Mixed-Integer Linear Programming (MILP), Advanced Predictive Models, Supply Chain Infrastructure Optimization, Matrix Variance Analysis.</p>
+                        <p><strong class="text-darkText">Academic Achievements:</strong> Awarded full research path validation criteria for advanced dataset manipulation modules.</p>
+                    </div>
+                </div>
 
-      <div class="card">
-        <h3>JavaScript App</h3>
-        <p>A simple interactive app using JavaScript.</p>
-        <a href="#">View Project</a>
-      </div>
-    </div>
-  </section>
+                <!-- Academic Card 2 -->
+                <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-primaryPink transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primaryPink/60 group-hover:h-full transition-all"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-darkText">BSc in Business Analytics</h3>
+                            <p class="text-sm font-medium text-secondaryText">Honors Degree Program Graduate</p>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-xs font-mono bg-softBg px-2 py-1 rounded text-secondaryText border border-subtleBorder">Completed</span>
+                            <p class="text-xs text-secondaryText mt-1">International Framework</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-subtleBorder/40 pt-3 space-y-2 text-sm text-secondaryText">
+                        <p><strong class="text-darkText">Key Focus Fields:</strong> Exploratory Data Analysis, Multi-Criteria Decision Analysis, Database Architecture, Regression Architectures.</p>
+                        <p><strong class="text-darkText">Academic Honors:</strong> Graduated within Top Tier of cohort distribution matrix with strict honors track notations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>GitHub: github.com/your-username</p>
-    <p>LinkedIn: linkedin.com/in/your-profile</p>
-  </section>
+        <!-- 4. EXPERIENCE SECTION -->
+        <section id="experience" class="scroll-mt-20">
+            <div class="border-b border-subtleBorder pb-4 mb-8">
+                <h2 class="text-2xl font-bold tracking-tight">03. Professional Timeline</h2>
+            </div>
+            
+            <div class="relative border-l-2 border-subtleBorder pl-6 ml-4 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative group">
+                    <!-- Dot anchor -->
+                    <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-primaryPink group-hover:bg-primaryPink transition-colors"></div>
+                    
+                    <div class="bg-white border border-subtleBorder p-6 rounded-xl shadow-sm hover:shadow transition-shadow">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-darkText group-hover:text-primaryPink transition-colors">Client & Operations Analyst Intern</h3>
+                                <p class="text-xs font-medium text-secondaryText">Global Health and Enterprise Technology Leader</p>
+                            </div>
+                            <span class="text-xs font-mono bg-lightBlush px-2 py-0.5 rounded border border-subtleBorder self-start sm:self-center">March 2026 – Present</span>
+                        </div>
+                        <ul class="text-sm text-secondaryText space-y-2 list-disc list-inside marker:text-primaryPink">
+                            <li>Engineered reproducible reporting workflows to analyze operational cycle times and regional data distribution loops.</li>
+                            <li>Integrated legacy customer data streams into clear, centralized metrics views, cutting diagnostic report times down significantly.</li>
+                            <li>Identified inventory alignment errors via predictive analytics pipelines, boosting planning data precision across stakeholders.</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">Power BI</span>
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">SQL Enterprise</span>
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">EDA Engine</span>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <p>© 2026 Cam Ha Bui. All rights reserved.</p>
-  </footer>
+                <!-- Timeline Item 2 -->
+                <div class="relative group">
+                    <!-- Dot anchor -->
+                    <div class="absolute -left-[33px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-subtleBorder group-hover:border-primaryPink group-hover:bg-primaryPink transition-colors"></div>
+                    
+                    <div class="bg-white border border-subtleBorder p-6 rounded-xl shadow-sm hover:shadow transition-shadow">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+                            <div>
+                                <h3 class="text-base font-bold text-darkText">Operations Analyst Intern</h3>
+                                <p class="text-xs font-medium text-secondaryText">Ground Transportation & Logistics Network Specialist</p>
+                            </div>
+                            <span class="text-xs font-mono bg-softBg px-2 py-0.5 rounded border border-subtleBorder self-start sm:self-center">Prior to 2026</span>
+                        </div>
+                        <ul class="text-sm text-secondaryText space-y-2 list-disc list-inside marker:text-subtleBorder">
+                            <li>Built complex, clean data pipelines to track vehicle route deviation errors and optimize overall transfer scheduling matrices.</li>
+                            <li>Designed dynamic KPI dashboards mapping service-level agreement metrics for clear executive operational visibility.</li>
+                            <li>Wrote Python scripts to systematically clean messy spatial datasets, reducing downstream data ingestion failures.</li>
+                        </ul>
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">Python Pandas</span>
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">Tableau Desktop</span>
+                            <span class="text-[11px] px-2 py-0.5 bg-softBg border border-subtleBorder rounded font-mono">Logistics KPI Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROJECTS SECTION (MAIN FEATURE & CMS FRAMEWORK) -->
+        <section id="projects" class="scroll-mt-20">
+            <div class="border-b border-subtleBorder pb-4 mb-4">
+                <h2 class="text-2xl font-bold tracking-tight">04. Analytical Showcases</h2>
+            </div>
+            <p class="text-sm text-secondaryText mb-8 max-w-xl">
+                Click any case study profile below to dynamically render the complete programmatic schema, business discovery rules, and validation logic models within the workspace view.
+            </p>
+            
+            <!-- Dynamic Grid Space -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-target-grid">
+                <!-- Project Card 1 -->
+                <div onclick="renderCmsProject('cosmetics-inclusivity')" class="cursor-pointer bg-white border border-subtleBorder rounded-xl overflow-hidden shadow-sm hover:border-primaryPink transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="h-44 bg-lightBlush/50 flex items-center justify-center p-6 border-b border-subtleBorder/60 relative">
+                        <div class="w-full h-full border border-dashed border-primaryPink/40 rounded-lg flex flex-col justify-center items-center text-center p-2">
+                            <span class="text-xs font-mono text-darkText bg-white px-2 py-0.5 rounded shadow-sm">Matrix Density Distribution Layout</span>
+                            <div class="w-2/3 bg-primaryPink/20 h-2 rounded-full mt-3 overflow-hidden">
+                                <div class="bg-primaryPink h-full w-[85%]"></div>
+                            </div>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono bg-white border border-subtleBorder px-2 py-0.5 rounded text-darkText">Featured Project</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-secondaryText">
+                            <span>Assortment Optimization</span>
+                            <span>June 2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-darkText group-hover:text-primaryPink transition-colors">Cosmetic Assortment Inclusivity Engine</h3>
+                        <p class="text-xs text-secondaryText line-clamp-2">A mathematical approach using clustering profiles to solve structural stock optimization hurdles for complex tone profiles.</p>
+                        <div class="flex flex-wrap gap-1 pt-1">
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Python Scikit</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Mixed-Integer Linear Programming</span>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <span class="text-xs font-semibold text-darkText inline-flex items-center gap-1 group-hover:text-primaryPink">View Case Study <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div onclick="renderCmsProject('bauxite-violation-model')" class="cursor-pointer bg-white border border-subtleBorder rounded-xl overflow-hidden shadow-sm hover:border-primaryPink transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="h-44 bg-softBg flex items-center justify-center p-6 border-b border-subtleBorder/60 relative">
+                        <div class="w-full h-full border border-dashed border-secondaryText/20 rounded-lg flex flex-col justify-center items-center text-center p-2">
+                            <span class="text-xs font-mono text-secondaryText bg-white px-2 py-0.5 rounded shadow-sm">Risk Assessment Matrix Map</span>
+                            <div class="flex gap-1 mt-4 w-1/2 justify-center">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-secondaryText">
+                            <span>Compliance Analytics</span>
+                            <span>Dec 2025</span>
+                        </div>
+                        <h3 class="text-base font-bold text-darkText group-hover:text-primaryPink transition-colors">Bauxite Extraction Audit & Structural Analysis</h3>
+                        <p class="text-xs text-secondaryText line-clamp-2">Synthesized dense administrative audit frameworks into structured risk metrics profiles to prevent compliance deviations.</p>
+                        <div class="flex flex-wrap gap-1 pt-1">
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Text Mining</span>
+                            <span class="text-[10px] px-2 py-0.5 bg-softBg border border-subtleBorder text-darkText rounded-md">Power BI Audit Path</span>
+                        </div>
+                        <div class="pt-2 flex justify-end">
+                            <span class="text-xs font-semibold text-darkText inline-flex items-center gap-1 group-hover:text-primaryPink">View Case Study <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DYNAMIC CMS DISPLAY LIGHTBOX LAYOUT TARGET -->
+            <div id="cms-render-viewport" class="hidden mt-8 bg-white border border-primaryPink p-6 sm:p-8 rounded-xl shadow-md transition-all relative">
+                <!-- Close Button Inside Viewport Component -->
+                <button onclick="closeCmsPanel()" class="absolute top-4 right-4 bg-softBg hover:bg-lightBlush border border-subtleBorder text-darkText px-3 py-1 rounded-lg text-xs font-mono transition-colors">
+                    ✕ Clear Dynamic View
+                </button>
+                <div id="cms-payload-area"></div>
+            </div>
+        </section>
+
+        <!-- 6. EXTRACURRICULAR ACTIVITIES SECTION -->
+        <section id="extracurricular" class="scroll-mt-20">
+            <div class="border-b border-subtleBorder pb-4 mb-8">
+                <h2 class="text-2xl font-bold tracking-tight">05. Engagement &amp; Leadership</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Activity Card 1 -->
+                <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-subtleBorder/80 transition-colors">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-mono text-primaryPink bg-lightBlush px-2 py-0.5 rounded font-bold uppercase">Hackathon Framework</span>
+                        <span class="text-xs font-mono text-secondaryText">2025</span>
+                    </div>
+                    <h3 class="text-base font-bold text-darkText mb-2">Regional Data Analytics &amp; Operations Tournament</h3>
+                    <p class="text-sm text-secondaryText leading-relaxed mb-4">
+                        Collaborated within a cross-functional squad of analysts to devise optimization parameters covering city-wide container shipping delays over a 48-hour sprints sequence.
+                    </p>
+                    <div class="text-xs text-darkText font-medium bg-softBg p-2.5 rounded border border-subtleBorder">
+                        <strong class="text-primaryPink">Transferable Skills:</strong> Crisis Agile Structuring, Live-Data Pipeline Presentation, Analytical Problem-Solving under tight constraints.
+                    </div>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="bg-white border border-subtleBorder rounded-xl p-6 shadow-sm hover:border-subtleBorder/80 transition-colors">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-mono text-secondaryText bg-softBg px-2 py-0.5 rounded font-bold uppercase">Academic Event Group</span>
+                        <span class="text-xs font-mono text-secondaryText">October 2025</span>
+                    </div>
+                    <h3 class="text-base font-bold text-darkText mb-2">University Analytics Graduation Gala Cohort Leader</h3>
+                    <p class="text-sm text-secondaryText leading-relaxed mb-4">
+                        Elected to direct student experience staging matrices and build interactive technical portfolio profiles representing data visualization paradigms for alumni networks.
+                    </p>
+                    <div class="text-xs text-darkText font-medium bg-softBg p-2.5 rounded border border-subtleBorder">
+                        <strong class="text-primaryPink">Transferable Skills:</strong> Resource Estimation, Milestone Mapping, Public Relations &amp; Engagement Systems Management.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT SECTION -->
+        <section id="contact" class="scroll-mt-20 data-grid-bg py-8">
+            <div class="bg-white border border-subtleBorder rounded-2xl p-6 sm:p-10 shadow-sm max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <!-- Text Frame -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <h2 class="text-2xl font-bold tracking-tight text-darkText">Let's turn data into meaningful decisions.</h2>
+                        <p class="text-sm text-secondaryText leading-relaxed">
+                            Open to internships, corporate analytics partnerships, data engineering challenges, or architecture reviews. Drop a prompt line anytime!
+                        </p>
+                        <div class="pt-2 space-y-2 text-xs font-mono text-darkText">
+                            <p class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primaryPink"></span>
+                                <span>analysis@domain.com</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primaryPink"></span>
+                                <span>linkedin.com/in/username</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Interaction Form -->
+                    <form onsubmit="handleFormSubmission(event)" class="lg:col-span-3 space-y-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-secondaryText mb-1">Your Name</label>
+                                <input type="text" required class="w-full bg-softBg border border-subtleBorder text-darkText text-sm rounded-lg p-2 focus:outline-none focus:border-primaryPink transition-colors" />
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-secondaryText mb-1">Email Coordinates</label>
+                                <input type="email" required class="w-full bg-softBg border border-subtleBorder text-darkText text-sm rounded-lg p-2 focus:outline-none focus:border-primaryPink transition-colors" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-secondaryText mb-1">Subject Framework</label>
+                            <input type="text" required class="w-full bg-softBg border border-subtleBorder text-darkText text-sm rounded-lg p-2 focus:outline-none focus:border-primaryPink transition-colors" />
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-secondaryText mb-1">Message Matrix</label>
+                            <textarea rows="4" required class="w-full bg-softBg border border-subtleBorder text-darkText text-sm rounded-lg p-2 focus:outline-none focus:border-primaryPink transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-2.5 bg-primaryPink hover:bg-[#df99a9] text-darkText font-medium text-sm rounded-xl transition-all shadow-sm">
+                            Send Message Framework
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-subtleBorder/60 mt-24 bg-white py-8 text-xs text-secondaryText">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-primaryPink"></span>
+                <span class="font-bold text-darkText">Data Portfolio Framework 2026</span>
+            </div>
+            <div class="flex space-x-4 font-mono">
+                <a href="#" class="hover:text-primaryPink transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-primaryPink transition-colors">GitHub</a>
+                <a href="#home" class="text-primaryPink font-bold hover:underline">↑ Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION LOGIC ENGINE -->
+    <script>
+        // Framer Mock CMS In-Memory Database Structure
+        const cmsProjectDatabase = {
+            'cosmetics-inclusivity': {
+                title: "Cosmetic Assortment Inclusivity Engine",
+                summary: "Applying linear programming matrices and continuous variance distribution metrics to resolve structural stock availability faults within complex shade palettes.",
+                date: "June 2026",
+                category: "Assortment Optimization",
+                tools: ["Python Scikit", "PuLP Solver", "Seaborn Dashboarding"],
+                githubUrl: "https://github.com/example/cosmetics-inclusivity",
+                liveUrl: "https://dashboards.example.io/cosmetics-inclusivity",
+                businessProblem: "Legacy cosmetic allocation layers traditionally deploy unified SKU volume algorithms across varied geographical stores. This setup creates endemic stockout environments for specialized tone spectrums while concurrently generating toxic inventory asset deadweight inside major urban distributions hubs.",
+                methodology: "Developed an open-source clustering optimization architecture modeling multi-variate demographic consumption variance patterns. Used mixed-integer programming arrays to restructure warehouse allocation targets under tight resource boundaries.",
+                insights: "Discovered an unaddressed market demand segment tracking above 22% variance margin on standard inventories. Shifting allocation strategies yielded a documented 14% improvement metrics overhead inside trial distribution channels."
+            },
+            'bauxite-violation-model': {
+                title: "Bauxite Extraction Audit & Structural Analysis",
+                summary: "Parsing regional administrative audit records and legal environmental datasets into clear risk parameters.",
+                date: "December 2025",
+                category: "Compliance Analytics",
+                tools: ["Text Mining Python", "Power BI Audit Matrix"],
+                githubUrl: "https://github.com/example/bauxite-compliance-audit",
+                liveUrl: "https://dashboards.example.io/bauxite-audit",
+                businessProblem: "Regulatory extraction limits across extensive geographical mine footprints are manually logged via legacy reporting frameworks. This introduces significant lag indicators that hide risk violations until penalties are issued.",
+                methodology: "Processed historical text matrices and spatial audit documents from structural environmental reviews using natural language cleaning pipelines. Normalized violation triggers to build a preventative risk validation monitoring framework.",
+                insights: "Isolated three critical operational bottlenecks where structural resource reporting delays correlated directly with downstream legal variance events, facilitating early preventative adjustments."
+            }
+        };
+
+        // CMS Dynamic Rendering Handler
+        function renderCmsProject(slug) {
+            const project = cmsProjectDatabase[slug];
+            const viewport = document.getElementById('cms-render-viewport');
+            const target = document.getElementById('cms-payload-area');
+            
+            if (!project) return;
+
+            // Generate semantic DOM elements mapped directly from database schema
+            target.innerHTML = `
+                <div class="space-y-6 animate-[fadeIn_0.4s_ease-out]">
+                    <div class="space-y-2 border-b border-subtleBorder pb-4">
+                        <span class="text-xs font-mono bg-lightBlush text-darkText px-2 py-0.5 rounded border border-subtleBorder">${project.category}</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-darkText mt-1">${project.title}</h3>
+                        <p class="text-sm text-secondaryText leading-relaxed max-w-2xl">${project.summary}</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                        <div class="md:col-span-2 space-y-4">
+                            <div>
+                                <h4 class="font-bold text-darkText text-xs uppercase tracking-wider text-primaryPink mb-1">Business Problem Definition</h4>
+                                <p class="text-secondaryText leading-relaxed">${project.businessProblem}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkText text-xs uppercase tracking-wider text-primaryPink mb-1">Analysis Methodology & Systems Applied</h4>
+                                <p class="text-secondaryText leading-relaxed">${project.methodology}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkText text-xs uppercase tracking-wider text-primaryPink mb-1">Core Business Discovery Metric Insights</h4>
+                                <blockquote class="border-l-2 border-primaryPink pl-3 italic text-secondaryText bg-softBg p-2.5 rounded-r">
+                                    ${project.insights}
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="bg-softBg border border-subtleBorder p-4 rounded-xl space-y-4 h-fit">
+                            <div class="text-xs font-mono space-y-2">
+                                <p><strong class="text-darkText">Metadata Date:</strong> ${project.date}</p>
+                                <div>
+                                    <strong class="text-darkText block mb-1">Technology Stack Applied:</strong>
+                                    <div class="flex flex-wrap gap-1">
+                                        ${project.tools.map(t => `<span class="bg-white border border-subtleBorder px-1.5 py-0.5 rounded text-[10px]">${t}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-2 space-y-2">
+                                <a href="${project.githubUrl}" target="_blank" class="block w-full text-center text-xs font-medium bg-white text-darkText border border-subtleBorder py-2 rounded-lg hover:bg-lightBlush transition-colors">View GitHub Repository ↗</a>
+                                <a href="${project.liveUrl}" target="_blank" class="block w-full text-center text-xs font-medium bg-primaryPink text-darkText py-2 rounded-lg hover:bg-[#df99a9] transition-colors">View Live Dashboard ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Display container panel with smooth entry response
+            viewport.classList.remove('hidden');
+            viewport.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function closeCmsPanel() {
+            document.getElementById('cms-render-viewport').classList.add('hidden');
+        }
+
+        // Navigation Menu Interactions Handler
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Contact Submission Handler Simulation
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            alert('Analytical verification tracking transmission: Your sample form input simulation processed successfully.');
+            event.target.reset();
+        }
+    </script>
 </body>
 </html>
